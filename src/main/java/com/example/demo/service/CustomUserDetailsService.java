@@ -1,16 +1,16 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
+import static org.springframework.security.core.userdetails.User.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.core.userdetails.User.UserBuilder;
-import static org.springframework.security.core.userdetails.User.withUsername;
-// import org.springframework.security.core.userdetails.User.withUsername;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.User;
+import com.example.demo.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -25,7 +25,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         UserBuilder builder = withUsername(username);
         builder.password(user.getPassword());
-        builder.roles("USER");
+         
 
         return builder.build();
     }

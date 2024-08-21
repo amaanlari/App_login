@@ -1,0 +1,8 @@
+CREATE DATABASE login_credentials;
+use login_credentials;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+INSERT INTO users (username, password) VALUES ('2125it1098', '$2a$10$dXJpWX5Poc1z24OQixEYYuU6I1.k5wZZ1ovJs9ZBDeh4dpF8q6Aiq');
